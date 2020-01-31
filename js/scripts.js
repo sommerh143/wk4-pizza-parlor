@@ -1,11 +1,9 @@
-function AllOrders () {
-  this.orders = [],
-  this.currentId = 0
-}
+// function AllOrders () {
+//   this.Orders = []
+// }
 
-AllOrders.prototype.addOrder = function(order) {
-  order.id = this.assignId();
-  this.contacts.push(order);
+Order.prototype.addOrder = function(order) {
+  this.Orders.push(order);
 }
 
 function Order(size, topping ){
@@ -15,9 +13,9 @@ function Order(size, topping ){
 
 Order.prototype.totalPrice = function(){
   var toppingprice = topping.reduce((a, b) => a + b, 0);
-  console.log(toppingprice)
-  var price = this.size += this.toppingprice;
-  console.log(price);
+  console.log(this.size);
+  this.size += toppingprice;
+  console.log(size);
 }
 
 // order.prototype.ToppingPrice = function(){
@@ -26,9 +24,10 @@ Order.prototype.totalPrice = function(){
 // }
 
 
-var allOrders = new AllOrders();
+// var allOrders = new AllOrders();
 var order = new Order();
 var topping = [];
+var size = this.size;
 
 $(document).ready(function () {
   $("#submitName").click(function(event){
@@ -40,7 +39,7 @@ $(document).ready(function () {
 
   $("#toppingBtn").click(function(){
     var inputtedSize = parseInt($("#pizzaSize").val());
-    // $("#pizzaSize").val("");
+    $("#pizzaSize").val("");
     
     $("input:checkbox[name=topping]:checked").each(function(){
       var toppingResults = parseInt($(this).val());
@@ -49,7 +48,9 @@ $(document).ready(function () {
       
     });
     var newOrder = new Order(inputtedSize, topping);
-    console.log(newOrder);
-    order.totalPrice();
+    Order(newOrder);
+    console.log(order);
+    // Orders.totalPrice();
+    
   });
 });
