@@ -13,9 +13,10 @@ function Order(size, topping ){
 
 Order.prototype.totalPrice = function(){
   var toppingprice = topping.reduce((a, b) => a + b, 0);
-  console.log(this.size);
-  this.size += toppingprice;
-  console.log(size);
+  console.log("this is size",this.size);
+  var Prise = this.size += toppingprice;
+  console.log(Prise);
+  $("#price").text(Prise);
 }
 
 var allOrders = new AllOrders();
@@ -40,10 +41,7 @@ $(document).ready(function () {
       topping.push(toppingResults);
     });
     
-    var newOrder = new Order(inputtedSize, topping);
-    allOrders.addOrder(newOrder);
-    console.log(newOrder)
-    // console.log(allOrders);
+    var order = new Order(inputtedSize, topping);
     order.totalPrice();
   });
 });
