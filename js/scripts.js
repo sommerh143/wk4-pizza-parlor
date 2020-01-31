@@ -1,9 +1,9 @@
-// function AllOrders () {
-//   this.Orders = []
-// }
+function AllOrders () {
+  this.orders = []
+}
 
-Order.prototype.addOrder = function(order) {
-  this.Orders.push(order);
+AllOrders.prototype.addOrder = function(order) {
+  this.orders.push(order);
 }
 
 function Order(size, topping ){
@@ -18,13 +18,7 @@ Order.prototype.totalPrice = function(){
   console.log(size);
 }
 
-// order.prototype.ToppingPrice = function(){
-//   var toppingprice = topping.reduce((a, b) => a + b, 0);
-
-// }
-
-
-// var allOrders = new AllOrders();
+var allOrders = new AllOrders();
 var order = new Order();
 var topping = [];
 var size = this.size;
@@ -44,13 +38,12 @@ $(document).ready(function () {
     $("input:checkbox[name=topping]:checked").each(function(){
       var toppingResults = parseInt($(this).val());
       topping.push(toppingResults);
-      
-      
     });
-    var newOrder = new Order(inputtedSize, topping);
-    Order(newOrder);
-    console.log(order);
-    // Orders.totalPrice();
     
+    var newOrder = new Order(inputtedSize, topping);
+    allOrders.addOrder(newOrder);
+    console.log(newOrder)
+    // console.log(allOrders);
+    order.totalPrice();
   });
 });
