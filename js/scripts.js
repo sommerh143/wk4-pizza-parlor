@@ -13,8 +13,21 @@ function Order(size, topping ){
   this.topping = topping
 }
 
+Order.prototype.totalPrice = function(){
+  var toppingprice = topping.reduce((a, b) => a + b, 0);
+  console.log(toppingprice)
+  var price = this.size += this.toppingprice;
+  console.log(price);
+}
+
+// order.prototype.ToppingPrice = function(){
+//   var toppingprice = topping.reduce((a, b) => a + b, 0);
+
+// }
+
 
 var allOrders = new AllOrders();
+var order = new Order();
 var topping = [];
 
 $(document).ready(function () {
@@ -37,5 +50,6 @@ $(document).ready(function () {
     });
     var newOrder = new Order(inputtedSize, topping);
     console.log(newOrder);
+    order.totalPrice();
   });
 });
