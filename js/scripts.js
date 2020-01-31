@@ -8,13 +8,14 @@ AllOrders.prototype.addOrder = function(order) {
   this.contacts.push(order);
 }
 
-function Order(size, topping){
+function Order(size, topping ){
   this.size = size,
   this.topping = topping
 }
 
 
 var allOrders = new AllOrders();
+var topping = [];
 
 $(document).ready(function () {
   $("#submitName").click(function(event){
@@ -25,18 +26,16 @@ $(document).ready(function () {
   })
 
   $("#toppingBtn").click(function(){
-    var inputtedSize = $("#pizzaSize").val();
-    $("#pizzaSize").val("");
+    var inputtedSize = parseInt($("#pizzaSize").val());
+    // $("#pizzaSize").val("");
     
-    var newOrder = new Order(inputtedSize);
-    console.log(newOrder);
     $("input:checkbox[name=topping]:checked").each(function(){
+      var toppingResults = parseInt($(this).val());
+      topping.push(toppingResults);
       
-      var toppingResults = $(this).val();
-      // topping.push(toppingResults);
-      $(topping).val([]);
-      console.log(newOrder);
-    $()
-   });
+      
+    });
+    var newOrder = new Order(inputtedSize, topping);
+    console.log(newOrder);
   });
 });
