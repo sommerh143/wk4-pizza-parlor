@@ -12,7 +12,7 @@ _You will be able to order a pizza and chose what topings you would like, what s
  
 * go to github pages
 * clone or download link
-* open up the terminal and type "clone ___________"
+* open up the terminal and type "clone https://github.com/sommerh143/wk4-pizza-parlor.git"
 * then cd to the file called wk3-project"
 * when in that folder type open code .
 * then drag index.html to the web browser you are using.
@@ -34,10 +34,10 @@ _You will be able to order a pizza and chose what topings you would like, what s
 
 ## Known Bugs
  
-_N/A_
+_you cant make another order yet._
  
 ## GH Pages Link
-_____
+_https://sommerh143.github.io/wk4-pizza-parlor/_
  
 ## Support and contact details
  
