@@ -19,9 +19,9 @@ _You will be able to order a pizza and chose what topings you would like, what s
  
 ## Behavior Driven Development
  
-* enter name / number
-  * input: sommer 503-555-5555
-  * output: oder for sommer 
+* enter nameS
+  * input: Sommer
+  * output: oder for Sommer 
 * show list of pizza sizeto chose from
   * input: pizza selected size.
   * output: pizza size on side.
